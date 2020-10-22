@@ -1,6 +1,8 @@
 config BR2_PACKAGE_SDL2
 	bool "sdl2"
 	depends on !BR2_STATIC_LIBS
+	depends on BR2_PACKAGE_LIBRGA
+	depends on BR2_PACKAGE_RG351EXTRA
 	help
 	  Simple DirectMedia Layer 2 - SDL2 is a library that allows
 	  programs portable low level access to a video framebuffer,

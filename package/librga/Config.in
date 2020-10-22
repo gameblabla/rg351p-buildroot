@@ -1,0 +1,6 @@
+menuconfig BR2_PACKAGE_LIBRGA
+	bool "librga"
+	depends on BR2_PACKAGE_LIBDRM
+	help
+	  Linux Rockchip userspace utility
+

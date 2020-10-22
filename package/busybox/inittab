@@ -24,11 +24,16 @@ null::sysinit:/bin/ln -sf /proc/self/fd/0 /dev/stdin
 null::sysinit:/bin/ln -sf /proc/self/fd/1 /dev/stdout
 null::sysinit:/bin/ln -sf /proc/self/fd/2 /dev/stderr
 ::sysinit:/bin/hostname -F /etc/hostname
+
+::sysinit:/bin/mount /dev/mmcblk0p3 /mnt -t vfat -o rw,sync,utf8
+::sysinit:/sbin/swapon /dev/mmcblk0p2
+
 # now run any rc scripts
 ::sysinit:/etc/init.d/rcS
+tty1::respawn:/mnt/autoexec.sh
 
 # Put a getty on the serial port
-#ttyS0::respawn:/sbin/getty -L ttyS0 115200 vt100 # GENERIC_SERIAL
+console::respawn:/sbin/getty -L  console 0 vt100 # GENERIC_SERIAL
 
 # Stuff to do for the 3-finger salute
 #::ctrlaltdel:/sbin/reboot

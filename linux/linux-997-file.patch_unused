@@ -1,0 +1,12 @@
+diff --git a/tools/lib/api/fs/fs.c b/tools/lib/api/fs/fs.c
+--- a/tools/lib/api/fs/fs.c
++++ b/tools/lib/api/fs/fs.c
+@@ -188,7 +188,7 @@
+ 		return false;
+ 
+ 	fs->found = true;
++	strncpy(fs->path, override_path, sizeof(fs->path) - 1);
+-	strncpy(fs->path, override_path, sizeof(fs->path));
+ 	return true;
+ }
+ 
