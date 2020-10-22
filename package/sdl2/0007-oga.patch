@@ -1,0 +1,5 @@
+--- a/gamecontrollerdb.txt
++++ b/gamecontrollerdb.txt
+@@ -0,0 +1,2 @@
++# RG-351P Control scheme
++03000000091200000031000011010000,OpenSimHardware OSH PB Controller,platform:Linux,a:b1,b:b0,x:b3,y:b2,back:b7,guide:h1.1,start:b6,leftstick:b8,rightstick:b9,leftshoulder:b4,rightshoulder:b5,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,leftx:a0~,lefty:a1~,rightx:a2,righty:a3,lefttrigger:b10,righttrigger:b11,

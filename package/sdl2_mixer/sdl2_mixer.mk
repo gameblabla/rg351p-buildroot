@@ -28,11 +28,17 @@ else
 SDL2_MIXER_CONF_OPTS += --disable-music-midi-fluidsynth
 endif
 
+# Prefer libmikmod over Modplug due to dependency on C++
+ifeq ($(BR2_PACKAGE_LIBMIKMOD),y)
+SDL2_MIXER_CONF_OPTS += --enable-music-mod
+SDL2_MIXER_DEPENDENCIES += libmikmod
+else
 ifeq ($(BR2_PACKAGE_LIBMODPLUG),y)
 SDL2_MIXER_CONF_OPTS += --enable-music-mod-modplug
 SDL2_MIXER_DEPENDENCIES += libmodplug
 else
 SDL2_MIXER_CONF_OPTS += --disable-music-mod-modplug
+endif
 endif
 
 ifeq ($(BR2_PACKAGE_OPUSFILE),y)
