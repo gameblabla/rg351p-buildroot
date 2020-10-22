@@ -18,6 +18,8 @@ define RG351EXTRA_INSTALL_STAGING_CMDS
 
 	cp -rf $(@D)/usr $(TARGET_DIR)
 	cp -rf $(@D)/lib $(TARGET_DIR)
+	cp -rf $(@D)/usr $(STAGING_DIR)
+	cp -rf $(@D)/lib $(STAGING_DIR)
 endef
 
 $(eval $(generic-package))

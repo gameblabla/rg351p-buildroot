@@ -163,4 +163,6 @@ else
 SDL2_CONF_OPTS += --disable-video-kmsdrm
 endif
 
+SDL2_CONF_OPTS += --disable-alsatest LT_LDFLAGS="$LT_LDFLAGS -lrga"
+
 $(eval $(autotools-package))

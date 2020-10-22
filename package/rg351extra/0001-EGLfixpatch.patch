@@ -1,0 +1,27 @@
+This is a hack for now but should allow SDL2 to compile with EGL/KMSDRM.
+
+--- a/usr/include/EGL/eglplatform.h
++++ b/usr/include/EGL/eglplatform.h
+@@ -116,21 +116,11 @@
+ typedef intptr_t EGLNativePixmapType;
+ typedef intptr_t EGLNativeWindowType;
+ 
+-#elif defined(__unix__) && (defined(EGL_NO_X11) || defined(MESA_EGL_NO_X11_HEADERS))
++#elif defined(__unix__)
+ 
+ typedef void             *EGLNativeDisplayType;
+ typedef khronos_uintptr_t EGLNativePixmapType;
+ typedef khronos_uintptr_t EGLNativeWindowType;
+-
+-#elif defined(__unix__) || defined(USE_X11)
+-
+-/* X11 (tentative)  */
+-#include <X11/Xlib.h>
+-#include <X11/Xutil.h>
+-
+-typedef Display *EGLNativeDisplayType;
+-typedef Pixmap   EGLNativePixmapType;
+-typedef Window   EGLNativeWindowType;
+ 
+ #elif defined(__APPLE__)
+ 
