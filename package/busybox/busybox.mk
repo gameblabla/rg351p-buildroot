@@ -274,6 +274,10 @@ define BUSYBOX_INSTALL_LOGGING_SCRIPT
 		$(INSTALL) -m 0755 -D package/busybox/S02klogd \
 			$(TARGET_DIR)/etc/init.d/S02klogd; \
 	fi
+	
+	$(INSTALL) -m 0755 -D package/busybox/main $(TARGET_DIR)/etc/main;
+	mkdir -p $(TARGET_DIR)/home
+	mkdir -p $(TARGET_DIR)/home/oga
 endef
 endif
 
