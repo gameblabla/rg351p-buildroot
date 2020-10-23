@@ -291,7 +291,7 @@ config BR2_cortex_a32
 config BR2_cortex_a35
 	bool "cortex-A35"
 	select BR2_ARM_CPU_HAS_ARM if !BR2_ARCH_IS_64
-	select BR2_ARM_CPU_HAS_NEON if !BR2_ARCH_IS_64
+	select BR2_ARM_CPU_HAS_NEON
 	select BR2_ARM_CPU_HAS_THUMB2 if !BR2_ARCH_IS_64
 	select BR2_ARM_CPU_HAS_FP_ARMV8
 	select BR2_ARM_CPU_ARMV8A
@@ -914,7 +914,7 @@ config BR2_GCC_TARGET_FPU
 	default "fpv5-sp-d16"	if BR2_ARM_FPU_FPV5D16
 	default "fpv5-d16"	if BR2_ARM_FPU_FPV5DPD16
 	default "fp-armv8"	if BR2_ARM_FPU_FP_ARMV8
-	default "neon-fp-armv8"	if BR2_ARM_FPU_NEON_FP_ARMV8
+	default "crypto-neon-fp-armv8"	if BR2_ARM_FPU_NEON_FP_ARMV8
 	depends on BR2_arm || BR2_armeb
 
 config BR2_GCC_TARGET_FLOAT_ABI
