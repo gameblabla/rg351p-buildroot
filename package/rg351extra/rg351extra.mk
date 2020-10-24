@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-RG351EXTRA_VERSION = 94498b8fb7f33b1be3025ca2c1580b0e76f3ceaa
+RG351EXTRA_VERSION = 7545d00c84384877ed0045a8b4c128348cb5a9cb
 RG351EXTRA_SITE = $(call github,gameblabla,rg351pextra,$(RG351EXTRA_VERSION))
 RG351EXTRA_LICENSE = GPL-2.0+
 RG351EXTRA_LICENSE_FILES = COPYING
