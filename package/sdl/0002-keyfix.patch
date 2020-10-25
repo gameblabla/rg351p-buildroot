@@ -54,4 +54,3 @@ would have to find another way around that...
 +	[313] = SDLK_KP_PERIOD,
  };
  
- void KMSDRM_InitOSKeymap(_THIS)
