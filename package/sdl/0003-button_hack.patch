@@ -1,0 +1,42 @@
+--- a/src/joystick/linux/SDL_sysjoystick.c
++++ b/src/joystick/linux/SDL_sysjoystick.c
+@@ -664,6 +664,7 @@
+ 			}
+ 		}
+ 	}
++	if (joystick->nbuttons == 74) joystick->nbuttons = 0;
+ 
+ 	return(handled);
+ }
+@@ -767,6 +768,7 @@
+ 			}
+ 		}
+ 	}
++	if (joystick->nbuttons == 74) joystick->nbuttons = 0;
+ 	return(joystick->hwdata->is_hid);
+ }
+ 
+@@ -885,6 +887,7 @@
+ 
+ static int LogicalJoystickButton(
+    SDL_Joystick *joystick, Uint8 button, Uint8 state){
++	if (joystick->nbuttons > 99) return 1;
+         struct joystick_logical_mapping* buttons;
+         SDL_Joystick *logicaljoy = NULL;
+ 
+@@ -1042,12 +1045,15 @@
+ 				}
+ 				break;
+ 			    case JS_EVENT_BUTTON:
++					if (joystick->nbuttons != 74)
++					{
+ #ifndef NO_LOGICAL_JOYSTICKS
+ 				if (!LogicalJoystickButton(joystick,
+ 				           events[i].number, events[i].value))
+ #endif
+ 				SDL_PrivateJoystickButton(joystick,
+ 				           events[i].number, events[i].value);
++					}
+ 				break;
+ 			    default:
+ 				/* ?? */
