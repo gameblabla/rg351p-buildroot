@@ -1,0 +1,11 @@
+--- a/Makefile
++++ b/Makefile
+@@ -74,7 +74,7 @@
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+ 	
+ $(OBJ_S) : %.o : %.S
+-	$(CC) $(CFLAGS) -c -o $@ $<
++	$(AS) -c -o $@ $<
+ 
+ install:
+ 	cp $(TARGET) $(DESTDIR)/$(TARGET)
