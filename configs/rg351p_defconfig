@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2020.08-956-g4ffb8c375e-dirty Configuration
+# Buildroot 2020.08-961-gc5cdfc0e48-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -868,7 +868,6 @@ BR2_PACKAGE_QT5_JSCORE_AVAILABLE=y
 # Firmware
 #
 BR2_PACKAGE_RG351EXTRA=y
-BR2_PACKAGE_RRG351INPUT=y
 # BR2_PACKAGE_ARMBIAN_FIRMWARE is not set
 # BR2_PACKAGE_B43_FIRMWARE is not set
 # BR2_PACKAGE_LINUX_FIRMWARE is not set
