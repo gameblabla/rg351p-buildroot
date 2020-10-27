@@ -23,7 +23,8 @@ SDL_DEPENDENCIES += pulseaudio
 SDL_CONF_OPTS += PULSE=1
 endif
 
-ifeq ($(BR2_ARM_CPU_HAS_NEON),y)
+# Only for ARM 32-bits
+ifeq ($(BR2_ARM_CPU_HAS_ARM)$(BR2_ARM_CPU_HAS_NEON),yy)
 SDL_CONF_OPTS += NEON=1
 endif
 
