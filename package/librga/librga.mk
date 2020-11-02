@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-LIBRGA_VERSION = b20975d50
-LIBRGA_SITE = $(call github,Caesar-github,linux-rga,$(LIBRGA_VERSION))
+LIBRGA_VERSION = aefb84781d5a827abe9840cf8534ce325358885e
+LIBRGA_SITE = $(call github,rockchip-linux,linux-rga,$(LIBRGA_VERSION))
 LIBRGA_LICENSE = GPLv2
 LIBRGA_INSTALL_STAGING = YES
 
