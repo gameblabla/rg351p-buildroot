@@ -4,13 +4,13 @@
 #
 ################################################################################
 
-SDL_VERSION = 6f31ea70423c3b1b8d79f5d272476d8b9df5876b
+SDL_VERSION = 214160b2fbe6428a91d503d49cf5089590e6e425
 SDL_SITE = $(call github,gameblabla,SDL_Lite,$(SDL_VERSION))
 SDL_INSTALL_STAGING = YES
 SDL_DEPENDENCIES = host-pkgconf
 
 ifeq ($(BR2_STATIC_LIBS),y)
-SDL_CONF_OPTS += STATIC=1
+SDL_CONF_OPTS += STATIC_ENABLED=1
 endif
 
 ifeq ($(BR2_PACKAGE_ALSA_LIB),y)
@@ -33,7 +33,13 @@ SDL_CONF_OPTS += NEON=1
 endif
 endif
 
+ifeq ($(BR2_PACKAGE_SDL_FBCON),y)
+SDL_CONF_OPTS += FBDEV=1
+endif
+
+ifeq ($(BR2_PACKAGE_SDL_KMSDRM),y)
 SDL_CONF_OPTS += KMSDRM=1
+endif
 
 SDL_MAKE_ENV = AS="$(TARGET_AS)" CC="$(TARGET_CC)" PREFIX=/usr PKG_CONFIG="$(BASE_DIR)/host/bin/pkg-config" CFLAGS="$(TARGET_CFLAGS) $(LUA_CFLAGS) -flto"
 

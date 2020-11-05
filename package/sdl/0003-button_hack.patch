@@ -1,15 +1,16 @@
 --- a/src/joystick/linux/SDL_sysjoystick.c
 +++ b/src/joystick/linux/SDL_sysjoystick.c
-@@ -761,6 +761,8 @@
+@@ -763,6 +763,9 @@
  			}
  		}
  	}
++	
 +	if (joystick->nbuttons == 74) joystick->nbuttons = 0;
 +	
  	return (joystick->hwdata->is_hid);
  }
  
-@@ -774,6 +776,7 @@
+@@ -776,6 +779,7 @@
  	layout = SDL_joylist[joystick->index].map->layout + SDL_joylist[joystick->index].logicalno;
  
  	joystick->nbuttons = layout->nbuttons;
@@ -17,21 +18,19 @@
  	joystick->nhats = layout->nhats;
  	joystick->naxes = layout->naxes;
  	joystick->nballs = layout->nballs;
-@@ -1022,12 +1025,15 @@
+@@ -1024,11 +1028,14 @@
  					}
  					break;
  				case JS_EVENT_BUTTON:
-+					if (joystick->nbuttons != 74)
-+					{
++				if (joystick->nbuttons != 74)
++				{
  #ifndef NO_LOGICAL_JOYSTICKS
  					if(!LogicalJoystickButton(joystick, events[i].number, events[i].value))
  #endif
  				{
  					SDL_PrivateJoystickButton(joystick, events[i].number, events[i].value);
++				}
  				}
-+					}
  					break;
  				default:
- 					/* ?? */
- 
 

@@ -17,7 +17,7 @@ would have to find another way around that...
 
 --- a/src/video/kmsdrm/SDL_kmsdrmevents.c
 +++ b/src/video/kmsdrm/SDL_kmsdrmevents.c
-@@ -235,7 +235,7 @@
+@@ -263,7 +263,7 @@
  	[KEY_INSERT] = SDLK_INSERT,
  	[KEY_DELETE] = SDLK_DELETE,
  
@@ -26,31 +26,26 @@ would have to find another way around that...
  	[KEY_KPEQUAL] = SDLK_KP_EQUALS,
  	[KEY_PAUSE] = SDLK_PAUSE,
  
-@@ -256,6 +256,28 @@
- 	[BTN_LEFT] = SDL_BUTTON_LEFT,
+@@ -285,6 +285,22 @@
  	[BTN_RIGHT] = SDL_BUTTON_RIGHT,
  	[BTN_MIDDLE] = SDL_BUTTON_MIDDLE,
-+
+ 	
 +	[BTN_DPAD_UP] = SDLK_UP,
 +	[BTN_DPAD_DOWN] = SDLK_DOWN,
 +	[BTN_DPAD_LEFT] = SDLK_LEFT,
 +	[BTN_DPAD_RIGHT] = SDLK_RIGHT,
-+
 +	[304] = SDLK_LCTRL,
 +	[305] = SDLK_LALT,
 +	[306] = SDLK_LSHIFT,
 +	[307] = SDLK_SPACE,
-+
 +	[311] = SDLK_ESCAPE,
 +	[310] = SDLK_RETURN,
-+
 +	[308] = SDLK_TAB,
 +	[309] = SDLK_BACKSPACE,
-+	
 +	[314] = SDLK_PAGEUP,
 +	[315] = SDLK_PAGEDOWN,
-+
 +	[312] = SDLK_KP_DIVIDE,
 +	[313] = SDLK_KP_PERIOD,
  };
  
+ void KMSDRM_InitOSKeymap(_THIS)
