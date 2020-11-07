@@ -1,7 +1,6 @@
 #!/bin/sh
 export HOME="/home/oga"
 export SDL_NOMOUSE=1
-export SDL_GAMECONTROLLERCONFIG="/usr/share/mapping/gamecontrollerdb.txt"
 # This enables audio. SPK mode does nothing on the RG-351P. (and presumbly the OGA as well)
 amixer cset name='Playback Path' HP > /dev/null 2>&1;
 while [ 1 ]

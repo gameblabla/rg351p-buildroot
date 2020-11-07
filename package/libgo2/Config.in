@@ -1,5 +1,5 @@
-config BR2_PACKAGE_SDL
-	bool "SDL"
+config BR2_PACKAGE_LIBGO2
+	bool "LIBGO2"
 	help
 	  Simple DirectMedia Layer - SDL is a library that allows
 	  programs portable low level access to a video framebuffer,
@@ -7,3 +7,6 @@ config BR2_PACKAGE_SDL
 
 	  http://www.libsdl.org/
 
+if BR2_PACKAGE_LIBGO2
+
+endif

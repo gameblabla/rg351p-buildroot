@@ -1,4 +1,2 @@
-# Locally calculated after checking pgp signature
-sha256	4f59434be462371dcfc240c0677cb3d294aea27758a7c941dcf232d8c18980cc  sdl-214160b2fbe6428a91d503d49cf5089590e6e425.tar.gz
-# Locally computed
-sha256	bb117c0fbd7f57f64170b690285d7df07c2371b578e3b3cd3aa2e1155ef461a0	COPYING
+# Locally calculated
+sha256 4d2abfc05ddcc1287c5913fafb6c4b66f6576ab10cdf9ca75a988e405cfdee37  sdl-ea74df64eb66bacca41db3c53eb1af3fb805bf11.tar.gz

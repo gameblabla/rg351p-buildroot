@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2020.08-966-g80c3713f1e-dirty Configuration
+# Buildroot 2020.08-967-g9d9346bb80-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -447,7 +447,7 @@ BR2_PACKAGE_ATEST=y
 # BR2_PACKAGE_FAAD2 is not set
 BR2_PACKAGE_FFMPEG_ARCH_SUPPORTS=y
 # BR2_PACKAGE_FFMPEG is not set
-BR2_PACKAGE_FLAC=y
+# BR2_PACKAGE_FLAC is not set
 # BR2_PACKAGE_FLITE is not set
 # BR2_PACKAGE_FLUID_SOUNDFONT is not set
 # BR2_PACKAGE_FLUIDSYNTH is not set
@@ -733,6 +733,7 @@ BR2_PACKAGE_EXFAT_UTILS=y
 # Games
 #
 # BR2_PACKAGE_ASCII_INVADERS is not set
+# BR2_PACKAGE_BENNUGD is not set
 # BR2_PACKAGE_CHOCOLATE_DOOM is not set
 # BR2_PACKAGE_FLARE_ENGINE is not set
 # BR2_PACKAGE_GNUCHESS is not set
@@ -810,6 +811,7 @@ BR2_PACKAGE_PROVIDES_LIBGLES="rg351extra"
 # ogre needs X11 and an OpenGL provider
 #
 # BR2_PACKAGE_PSPLASH is not set
+BR2_PACKAGE_LIBGO2=y
 BR2_PACKAGE_SDL=y
 # BR2_PACKAGE_SDL_FBCON is not set
 BR2_PACKAGE_SDL_KMSDRM=y
