@@ -7,3 +7,26 @@ config BR2_PACKAGE_SDL
 
 	  http://www.libsdl.org/
 
+if BR2_PACKAGE_SDL
+
+config BR2_PACKAGE_SDL_FBCON
+	bool "SDL framebuffer console video driver"
+	default y
+
+config BR2_PACKAGE_SDL_KMSDRM
+	bool "SDL KMS/DRM video driver"
+	depends on BR2_PACKAGE_LIBDRM
+	depends on BR2_PACKAGE_HAS_UDEV
+	default y
+
+config BR2_PACKAGE_SDL_DIRECTFB
+	bool "SDL DirectFB video driver"
+	depends on BR2_PACKAGE_DIRECTFB
+
+config BR2_PACKAGE_SDL_X11
+	bool "SDL X11 video driver"
+	depends on BR2_PACKAGE_XORG7
+	select BR2_PACKAGE_XLIB_LIBX11
+	select BR2_PACKAGE_XLIB_LIBXEXT
+
+endif
