@@ -4,9 +4,8 @@
 #
 ################################################################################
 
-SDL_MIXER_VERSION = 1.2.13
-SDL_MIXER_SOURCE = SDL-1.2.tar.gz
-SDL_MIXER_SITE =  https://github.com/SDL-mirror/SDL_mixer/archive
+SDL_MIXER_VERSION = b38fd5e9b93b65684fbf49323ee42a6f167eff96
+SDL_MIXER_SITE = $(call github,libsdl-org,SDL_mixer,$(SDL_MIXER_VERSION))
 SDL_MIXER_LICENSE = zlib
 SDL_MIXER_LICENSE_FILES = COPYING
 
@@ -16,36 +15,11 @@ SDL_MIXER_CONF_OPTS = \
 	--without-x \
 	--with-sdl-prefix=$(STAGING_DIR)/usr \
 	--disable-music-mp3 \
-	--disable-music-mod
+	--disable-music-mod \
+	--disable-music-flac # configure script fails when cross compiling
 	
 ifeq ($(BR2_STATIC_LIBS),y)
 SDL_MIXER_CONF_OPTS += --disable-music-mod-shared --disable-music-fluidsynth-shared --disable-music-ogg-shared --disable-music-flac-shared --disable-music-mp3-shared --disable-shared
-endif
-
-ifeq ($(BR2_PACKAGE_FLAC),y)
-SDL_MIXER_CONF_OPTS += --enable-music-flac
-SDL_MIXER_DEPENDENCIES += flac
-else
-SDL_MIXER_CONF_OPTS += --disable-music-flac
-endif
-
-ifeq ($(BR2_PACKAGE_FLUIDSYNTH),y)
-SDL_MIXER_CONF_OPTS += --enable-music-midi-fluidsynth
-SDL_MIXER_DEPENDENCIES += fluidsynth
-SDL_MIXER_HAS_MIDI = YES
-else
-SDL_MIXER_CONF_OPTS += --disable-music-midi-fluidsynth
-endif
-
-ifeq ($(BR2_PACKAGE_SDL_MIXER_MIDI_TIMIDITY),y)
-SDL_MIXER_CONF_OPTS += \
-	--enable-music-midi \
-	--enable-music-timidity-midi
-SDL_MIXER_HAS_MIDI = YES
-endif
-
-ifneq ($(SDL_MIXER_HAS_MIDI),YES)
-SDL_MIXER_CONF_OPTS += --disable-music-midi
 endif
 
 ifeq ($(BR2_PACKAGE_LIBMAD),y)
@@ -67,7 +41,7 @@ SDL_MIXER_DEPENDENCIES += libmikmod
 else
 ifeq ($(BR2_PACKAGE_LIBMODPLUG),y)
 SDL_MIXER_CONF_OPTS += --enable-music-mod-modplug
-SDL_MIXER_DEPENDENCIES += host-pkgconf libmodplug
+SDL_MIXER_DEPENDENCIES += libmodplug
 else
 SDL_MIXER_CONF_OPTS += --disable-music-mod-modplug
 endif
@@ -80,5 +54,7 @@ SDL_MIXER_DEPENDENCIES += tremor
 else
 SDL_MIXER_CONF_OPTS += --disable-music-ogg
 endif
+
+SDL_MIXER_CONF_OPTS += --enable-music-timidity-midi
 
 $(eval $(autotools-package))
